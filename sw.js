@@ -1,4 +1,4 @@
-const CACHE = 'zilv-v17';
+const CACHE = 'zilv-v18';
 const CORE = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
