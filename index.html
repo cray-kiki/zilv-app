@@ -42,6 +42,39 @@
     --tint:#f2faf8; --tint2:#f4faf9; --input:#fbfefd; --rowline:#f2f9f6;
     --savbg:#f1fbf7; --savbd:#dcf0e9;
   }
+  /* 淡黄（柠檬奶昔） */
+  html[data-theme="lemon"]{
+    --bg:#fdf9ee; --line:#f3ecd8;
+    --ink:#4a3d22; --sub:#a8996f;
+    --accent:#eab84e; --accent-2:#b07d1f; --accent-soft:#fbf1d8;
+    --ok:#e0556f; --green:#5cc4a8; --mint:#5cc4a8;
+    --deep:#cf9c33;
+    --shadow:0 4px 18px rgba(196,158,74,.10);
+    --tint:#fbf7ec; --tint2:#fcf9f0; --input:#fefcf6; --rowline:#f8f3e6;
+    --savbg:#fdf8ea; --savbd:#f3e7c8;
+  }
+  /* 淡蓝（天空苏打） */
+  html[data-theme="sky"]{
+    --bg:#eff6fd; --line:#ddeaf6;
+    --ink:#243a4e; --sub:#839ab0;
+    --accent:#6fb2e6; --accent-2:#3a7fb5; --accent-soft:#e2effb;
+    --ok:#e0556f; --green:#5cc4a8; --mint:#5cc4a8;
+    --deep:#5496cb;
+    --shadow:0 4px 18px rgba(58,127,181,.10);
+    --tint:#f4f9fd; --tint2:#f6fafd; --input:#fcfdfe; --rowline:#f0f6fb;
+    --savbg:#f2f8fd; --savbd:#dfeef9;
+  }
+  /* 淡紫（香芋奶盖） */
+  html[data-theme="lav"]{
+    --bg:#f6f2fb; --line:#e9e2f4;
+    --ink:#3b2f52; --sub:#9187ab;
+    --accent:#a98fd6; --accent-2:#7458ab; --accent-soft:#efe8fa;
+    --ok:#e0556f; --green:#5cc4a8; --mint:#5cc4a8;
+    --deep:#8d6fc4;
+    --shadow:0 4px 18px rgba(116,88,171,.10);
+    --tint:#f7f4fc; --tint2:#f9f7fd; --input:#fdfcff; --rowline:#f3effa;
+    --savbg:#f6f3fc; --savbd:#e8e1f6;
+  }
   *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
   html,body{margin:0;padding:0}
   body{
@@ -92,7 +125,7 @@
   .tab:not(.on):active{background:var(--tint2)}
 
   /* 主题切换小圆点 */
-  .themebar{display:flex; gap:6px; align-items:center; justify-content:center; padding:8px 0 2px}
+  .themebar{display:flex; flex-wrap:wrap; gap:5px; max-width:54px; align-items:center; justify-content:center; padding:8px 0 2px}
   .tdot{width:15px; height:15px; border-radius:50%; border:2px solid #fff; padding:0; cursor:pointer;
     box-shadow:0 1px 5px rgba(0,0,0,.14)}
   .tdot.on{box-shadow:0 0 0 2px var(--accent-2)}
@@ -105,6 +138,9 @@
   .phead2{display:flex; align-items:flex-start; justify-content:space-between; gap:10px; padding:16px 2px 12px}
   .phead2 .h1{font-size:20px; font-weight:800; letter-spacing:.6px; line-height:1.2; color:#5c4560}
   html[data-theme="mint"] .phead2 .h1{color:#1c4f44}
+  html[data-theme="lemon"] .phead2 .h1{color:#6d5518}
+  html[data-theme="sky"] .phead2 .h1{color:#24507a}
+  html[data-theme="lav"] .phead2 .h1{color:#533a80}
   .phead2 .h1 small{display:block; font-size:10.5px; font-weight:500; color:var(--sub); letter-spacing:.4px; margin-top:5px}
   .pillbt{
     display:inline-flex; align-items:center; gap:5px; flex-shrink:0;
@@ -138,6 +174,18 @@
     background:linear-gradient(160deg,#eafaf4 0%,#eef8fc 55%,#f0fbf6 100%);
     border-color:#dcf0e9; box-shadow:0 6px 20px rgba(26,146,122,.14);
   }
+  html[data-theme="lemon"] .hero{
+    background:linear-gradient(160deg,#fdf6df 0%,#fdfaf0 55%,#fbf4dc 100%);
+    border-color:#f1e6c4; box-shadow:0 6px 20px rgba(176,125,31,.13);
+  }
+  html[data-theme="sky"] .hero{
+    background:linear-gradient(160deg,#e6f2fc 0%,#f0f7fd 55%,#eaf4fc 100%);
+    border-color:#d5e7f5; box-shadow:0 6px 20px rgba(58,127,181,.13);
+  }
+  html[data-theme="lav"] .hero{
+    background:linear-gradient(160deg,#f0eafc 0%,#f7f3fd 55%,#f1e9fb 100%);
+    border-color:#e2d8f2; box-shadow:0 6px 20px rgba(116,88,171,.13);
+  }
   .cat-ring{
     width:74px; height:74px; margin:0 auto 7px; border-radius:50%;
     background:#fff; box-shadow:0 6px 16px rgba(214,150,190,.24);
@@ -146,8 +194,14 @@
   .cat-ring svg{width:62px; height:62px}
   .hero-greet{font-size:16px; font-weight:800; letter-spacing:.5px; color:#6d4f66}
   html[data-theme="mint"] .hero-greet{color:#1c4f44}
+  html[data-theme="lemon"] .hero-greet{color:#6d5518}
+  html[data-theme="sky"] .hero-greet{color:#24507a}
+  html[data-theme="lav"] .hero-greet{color:#533a80}
   .hero-hint{font-size:11px; margin-top:4px; color:#9c86a5}
   html[data-theme="mint"] .hero-hint{color:#6f968c}
+  html[data-theme="lemon"] .hero-hint{color:#a08a55}
+  html[data-theme="sky"] .hero-hint{color:#7d94aa}
+  html[data-theme="lav"] .hero-hint{color:#8a7ca8}
   .hero .badge-ok{color:#2f9d7f}
   .hero .badge-no{color:#d4657f}
   .hero-row{display:flex; margin-top:12px; background:rgba(255,255,255,.78); border-radius:16px; padding:9px 3px}
@@ -164,6 +218,9 @@
     display:flex; gap:7px; align-items:flex-start;
   }
   html[data-theme="mint"] .hero-quote{border-color:#cfeade; color:#5c7f76}
+  html[data-theme="lemon"] .hero-quote{border-color:#ecdcae; color:#857446}
+  html[data-theme="sky"] .hero-quote{border-color:#cbe2f2; color:#5d7186}
+  html[data-theme="lav"] .hero-quote{border-color:#ddd0f0; color:#6e6190}
   .hero-quote .qm{width:13px; height:13px; flex-shrink:0; margin-top:2px; color:var(--accent); opacity:.95; fill:currentColor}
 
   /* ===== 页面顶部装饰小卡（图案 + 每日一句） ===== */
@@ -278,6 +335,9 @@
     transition:transform .1s;
   }
   html[data-theme="mint"] .btn{box-shadow:0 4px 12px rgba(62,201,166,.34)}
+  html[data-theme="lemon"] .btn{box-shadow:0 4px 12px rgba(234,184,78,.34)}
+  html[data-theme="sky"] .btn{box-shadow:0 4px 12px rgba(111,178,230,.34)}
+  html[data-theme="lav"] .btn{box-shadow:0 4px 12px rgba(169,143,214,.34)}
   .btn:active{transform:scale(.95); opacity:.92}
   .btn.ghost{background:var(--accent-soft); color:var(--accent-2); box-shadow:none}
 
@@ -450,6 +510,9 @@
     transition:transform .12s;
   }
   html[data-theme="mint"] .fab{box-shadow:0 8px 20px rgba(62,201,166,.45)}
+  html[data-theme="lemon"] .fab{box-shadow:0 8px 20px rgba(234,184,78,.45)}
+  html[data-theme="sky"] .fab{box-shadow:0 8px 20px rgba(111,178,230,.45)}
+  html[data-theme="lav"] .fab{box-shadow:0 8px 20px rgba(169,143,214,.45)}
   .fab .ic{width:23px; height:23px; stroke-width:2.2}
   .fab:active{transform:scale(.92)}
 
@@ -496,6 +559,9 @@
   <div class="themebar">
     <button class="tdot on" data-th="pink" style="background:#ec93b3" aria-label="樱花粉"></button>
     <button class="tdot" data-th="mint" style="background:#3ec9a6" aria-label="薄荷绿"></button>
+    <button class="tdot" data-th="lemon" style="background:#eab84e" aria-label="柠檬黄"></button>
+    <button class="tdot" data-th="sky" style="background:#6fb2e6" aria-label="天空蓝"></button>
+    <button class="tdot" data-th="lav" style="background:#a98fd6" aria-label="香芋紫"></button>
   </div>
 </aside>
 
@@ -1919,7 +1985,11 @@ function fabAction(){
   }
 }
 function setTheme(t){
-  document.documentElement.setAttribute("data-theme", t === "mint" ? "mint" : "pink");
+  var TH=["pink","mint","lemon","sky","lav"];
+  document.documentElement.setAttribute("data-theme", TH.indexOf(t)>-1 ? t : "pink");
+  var MC={pink:"#ec93b3",mint:"#3ec9a6",lemon:"#eab84e",sky:"#6fb2e6",lav:"#a98fd6"};
+  var mtc=document.querySelector('meta[name="theme-color"]');
+  if(mtc) mtc.setAttribute("content", MC[t]||"#ec93b3");
   try{ localStorage.setItem("wb_theme_v1", t); }catch(e){}
   document.querySelectorAll(".tdot").forEach(function(b){
     b.classList.toggle("on", b.getAttribute("data-th") === t);
